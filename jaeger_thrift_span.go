@@ -91,7 +91,7 @@ func buildTag(tag *Tag, maxTagValueLength int) *j.Tag {
 	switch value := tag.value.(type) {
 	case string:
 		vStr := truncateString(value, maxTagValueLength)
-		jTag.VStr = &vStr
+		jTag.VStr = vStr
 		jTag.VType = j.TagType_STRING
 	case []byte:
 		if len(value) > maxTagValueLength {
